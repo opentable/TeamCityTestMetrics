@@ -25,7 +25,7 @@ def http_get_request(url)
 	request = Typhoeus::Request.new(url,
 							method: :get,
 							userpwd: "svc_teamcityapi:#{decrpt_pass()}",
-							headers: { 'ContentType' => "application/json"}
+							headers: { 'ContentType' => "application/json", 'Accept' => 'application/json'}
 							)
 	return request
 end
@@ -40,9 +40,9 @@ def http_post_request(url, my_body, my_headers)
 	return request
 end
 
-def run_request_parse_xml(url)
+def run_request_parse_json(url)
 	response = self.http_get_request(url).run
-	return Crack::XML.parse(response.body)
+	return Crack::JSON.parse(response.body)
 end
 
 def get_run_time_lapse(start_time, end_time)
