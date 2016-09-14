@@ -33,7 +33,7 @@ end
 def http_post_request(url, my_body, my_headers)
 	request = Typhoeus::Request.new(url,
 					method: :post,
-					userpwd: "svc_teamcityapi:#Wpd$@cV5vjGJSqP",
+					userpwd: "svc_teamcityapi:#{decrpt_pass()}",
 					headers: my_headers,
 					body: my_body,
 					)
