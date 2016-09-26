@@ -4,13 +4,12 @@ class Teamcity
  require 'builder'
  require './utilities'
  
- $Team_City_Host = "teamcity.otenv.com"
+ #$Team_City_Host = "teamcity.otenv.com"
  
  def get_team_city_obj(type, urlvalue)
     if type == "project"
 		### e.g. http://teamcity.otenv.com/httpAuth/app/rest/projects/id:ConsumerCucumberTeamInfra
 		url = "#{$Team_City_Host}/httpAuth/app/rest/projects/id:#{urlvalue}"
-		##puts "url=>#{url}"
 	elsif type == "all_builds"
 		### e.g. http://teamcity.otenv.com/app/rest/buildTypes/id:bt2274/builds/
 		url = "#{$Team_City_Host}#{urlvalue}/builds"
@@ -18,6 +17,7 @@ class Teamcity
 		### e.g. http://teamcity.otenv.com/app/rest/builds/id:5138895
 		url = "#{$Team_City_Host}#{urlvalue}"
 	end
+	##puts "url=>#{url}"
 	return Utilities.new.run_request_parse_json(url)
  end
  
@@ -38,16 +38,17 @@ class Teamcity
 	return obj['buildTypes']['buildType']
  end
  
-  def get_all_builds_obj(project_response,project_test_name)
+  def get_all_builds_obj(project_response,project_test_name)  
 	self.get_buildType_obj(project_response).each do |buildType|
 		test_suite_name = buildType['name']		
 		# For each test suite, look for the latest test run status
-		return self.get_team_city_obj("all_builds", buildType['href']) if test_suite_name.downcase.eql? project_test_name.chop.downcase
+		return self.get_team_city_obj("all_builds", buildType['href']) if test_suite_name.downcase.eql? project_test_name.downcase
 	end
  end
  
  def get_latest_run_obj(builds_response)		    		
 	#Get the latest run url from the list of builds and drill down
+	#puts builds_response
 	latest_run = builds_response['build'].first
 	return self.get_team_city_obj("single_build", latest_run['href'])
  end
@@ -76,7 +77,12 @@ class Teamcity
 	elsif type.downcase == "status"
 		return obj['status']
 	elsif type.downcase == "test failed"
-		return "#{obj['testOccurrences']['failed']}/#{obj['testOccurrences']['count']}"
+	    if obj['testOccurrences']['failed'].nil?
+		  num_failed_tests = 0
+		else
+		  num_failed_tests = obj['testOccurrences']['failed']
+		end
+		return "#{num_failed_tests}/#{obj['testOccurrences']['count']}"
 	elsif type.downcase == "finish date"
 		return obj['finishDate']
 	end

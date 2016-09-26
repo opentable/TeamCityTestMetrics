@@ -59,14 +59,16 @@ def get_run_time_lapse(start_time, end_time)
 	return "#{ss} secs ago" if dd == 0 && hh == 0 && mm == 0
 end
 
-def create_json_obj(project_name, status, test_name, last_run, test_failed, green_since)
+def create_json_obj(sensu_name,environment, teams, test_status, project_name, test_name, last_run, test_failed, green_since)
 	json = {}
-	json["projectName"] = project_name
-	json["status"] = status
-	json["test_name"] = test_name
-	json["last_run"] = last_run
-	json["test_failed"] = test_failed
-	json["green_since"] = green_since
+	status = 0
+	status = 1 if test_status == 'FAILURE'
+	output = "Status: #{test_status}, ProjectName: #{project_name}, Test Name: #{test_name}, Test Failed: #{test_failed}, Last Run: #{last_run}, Green_Since: #{green_since}"
+	json["name"] = sensu_name
+	json["environment"] = environment
+	json["team"] = teams
+	json["status"] = status 
+	json["output"] = output
 	return json
 end
 	

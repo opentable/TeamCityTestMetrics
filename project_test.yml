@@ -1,0 +1,48 @@
+Attribution_PP_EU:
+  Environment: "PreProd"
+  Team: "consumer_platform"
+  TeamCityHost: "teamcity.otenv.com"
+  Project: "ConsumerCucumberTeamInfra"
+  Test: "Attribution EU PreProd - Team Infra"
+
+Attribution_PP_NA:  
+  Environment: "PreProd"
+  Team: "consumer_platform"
+  TeamCityHost: "teamcity.otenv.com"
+  Project: "ConsumerCucumberTeamInfra"
+  Test: "Attribution NA PreProd - Team Infra"
+
+Reservation_PP_ASIA:
+  Environment: "PreProd"
+  Team: "consumer_platform"
+  TeamCityHost: "teamcity"
+  Project: "PreProdCucumberTestsConsumer"
+  Test: "Reservation - Asia"
+
+Reservation_PP_EU:
+  Environment: "PreProd"
+  Team: "consumer_platform"
+  TeamCityHost: "teamcity" 
+  Project: "PreProdCucumberTestsConsumer"
+  Test: "Reservation - EU"
+
+Reservation_PP_NA:
+  Environment: "PreProd"
+  TeamCityHost: "teamcity"   
+  Project: "PreProdCucumberTestsConsumer"
+  Test: "Reservation - NA"
+  Team: "consumer_platform"
+
+# Attribution_PROD_NA:
+  # Environment: "Production"
+  # TeamCityHost: "teamcity.otsql.opentable.com"   
+  # Project: "ConsumerCucumberAutomation_ProductionTests"
+  # Test: "Attribution - NA"
+  # Team: "consumer_platform"
+
+# Reservation_PROD_COM:
+  # Environment: "Production"
+  # TeamCityHost: "teamcity.otsql.opentable.com"
+  # Project: "ConsumerCucumberAutomation_ProductionTests"
+  # Test: "Prod Tests - COM"
+  # Team: "booking_flow"
