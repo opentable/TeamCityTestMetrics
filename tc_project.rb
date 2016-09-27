@@ -20,6 +20,11 @@ class TCProjects
     @tc_project_data['name']
   end
   
+  def get_tc_project_buildtype_id
+    #Return Team City buildtype_id
+    @tc_last_test_run['buildType']['id']
+  end
+  
   def tc_all_builds
     ## Return all the builds for this test suite
     @tc_project_data['buildTypes']['buildType'].each do |buildType|

@@ -7,9 +7,6 @@ require './tc_project'
 
 YAML_CONFIG_LOAD = YAML.load_file("./project_test.yml")
 
-# ##Fire up a team city test run.
-# teamcity.run_tc_test("bt2274")
-
 ##Start from the Team City Project
 YAML_CONFIG_LOAD.each do | key, value |
 	
