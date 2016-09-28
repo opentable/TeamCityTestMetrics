@@ -9,14 +9,14 @@ YAML_CONFIG_LOAD = YAML.load_file("./project_test.yml")
 
 YAML_CONFIG_LOAD.each do | key, value |
 	
-    #Sensu info
+	#Sensu info
 	sensu_name = key
 	environment = value['Environment']
 	teams = value['Team']
 	
 	#TeamCity project object for a test suite
 	project = TCProjects.new( value['TeamCityHost'], value['Project'], value['Test'] )
-    team_city_project_name =  project.get_tc_project_name
+	team_city_project_name =  project.get_tc_project_name
 	
 	#Get the test execution status of the latest run
 	test_name = project.get_test_name

@@ -19,7 +19,7 @@ module Utilities
 
  def Utilities.http_get_request(url)	
 	request = Typhoeus::Request.new(url,
-                    method: :get,
+					method: :get,
 					userpwd: "svc_teamcityapi:#{decrpt_pass()}",
 					headers: { 'ContentType' => "application/json", 'Accept' => 'application/json'}
 					)
