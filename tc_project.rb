@@ -8,7 +8,7 @@ class TCProjects
   def initialize(tc_host, project_name, project_test)
     @tc_host = tc_host
 	@project_name = project_name
-    @project_test = project_test
+	@project_test = project_test
 	### e.g. http://teamcity.otenv.com/httpAuth/app/rest/projects/id:ConsumerCucumberTeamInfra
 	@tc_project_data = Utilities.run_request_parse_json("#{tc_host}/httpAuth/app/rest/projects/id:#{project_name}")
 	@tc_all_builds = self.tc_all_builds
@@ -18,11 +18,6 @@ class TCProjects
   def get_tc_project_name
     #Return Team City Project Name
     @tc_project_data['name']
-  end
-  
-  def get_tc_project_buildtype_id
-    #Return Team City buildtype_id
-    @tc_last_test_run['buildType']['id']
   end
   
   def tc_all_builds
@@ -36,8 +31,13 @@ class TCProjects
   end
   
   def tc_single_build(hrefurl)
-  ## Return all the info for a single build
+    ## Return all the info for a single build
      Utilities.run_request_parse_json("#{@tc_host}#{hrefurl}")
+  end
+  
+  def get_tc_project_buildtype_id
+    ##Return Team City buildtype_id
+    @tc_last_test_run['buildType']['id']
   end
   
   def get_test_name
@@ -63,12 +63,12 @@ class TCProjects
   
   def get_last_success_run
     @tc_all_builds['build'].each do |build|
-	  if build['status'].downcase == "success"
-		first_success_build = self.tc_single_build(build['href'])
-		#Calculate the lapse time since the test last executed
-		time_lapse = Utilities.get_run_time_lapse(first_success_build['finishDate'],DateTime.now.to_s)
-		return "Last Success: #{time_lapse}"
-	  end
+		if build['status'].downcase == "success"
+		  first_success_build = self.tc_single_build(build['href'])
+		  #Calculate the lapse time since the test last executed
+		  time_lapse = Utilities.get_run_time_lapse(first_success_build['finishDate'],DateTime.now.to_s)
+		  return "Last Success: #{time_lapse}"
+		end
 	end
 	last_known_fail_build = tc_single_build(@tc_all_builds['build'].last['href'])
 	#Calculate the lapse time since the test last executed

@@ -7,7 +7,6 @@ require './tc_project'
 
 YAML_CONFIG_LOAD = YAML.load_file("./project_test.yml")
 
-##Start from the Team City Project
 YAML_CONFIG_LOAD.each do | key, value |
 	
     #Sensu info
@@ -15,7 +14,7 @@ YAML_CONFIG_LOAD.each do | key, value |
 	environment = value['Environment']
 	teams = value['Team']
 	
-	#TeamCity project object
+	#TeamCity project object for a test suite
 	project = TCProjects.new( value['TeamCityHost'], value['Project'], value['Test'] )
     team_city_project_name =  project.get_tc_project_name
 	
