@@ -33,16 +33,16 @@ Reservation_PP_NA:
   Test: "Reservation - NA"
   Team: "consumer_platform"
 
-# Attribution_PROD_NA:
-  # Environment: "Production"
-  # TeamCityHost: "teamcity.otsql.opentable.com"   
-  # Project: "ConsumerCucumberAutomation_ProductionTests"
-  # Test: "Attribution - NA"
-  # Team: "consumer_platform"
+Attribution_PROD_NA:
+  Environment: "Production"
+  TeamCityHost: "teamcity.otsql.opentable.com"   
+  Project: "ConsumerCucumberAutomation_ProductionTests"
+  Test: "Attribution - NA"
+  Team: "consumer_platform"
 
-# Reservation_PROD_COM:
-  # Environment: "Production"
-  # TeamCityHost: "teamcity.otsql.opentable.com"
-  # Project: "ConsumerCucumberAutomation_ProductionTests"
-  # Test: "Prod Tests - COM"
-  # Team: "booking_flow"
+Reservation_PROD_COM:
+  Environment: "Production"
+  TeamCityHost: "teamcity.otsql.opentable.com"
+  Project: "ConsumerCucumberAutomation_ProductionTests"
+  Test: "Prod Tests - COM"
+  Team: "booking_flow"

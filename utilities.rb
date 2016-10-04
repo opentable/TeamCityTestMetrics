@@ -5,36 +5,36 @@ module Utilities
   require 'digest/sha1'
   require 'yaml'
  
-  def Utilities.decrpt_pass()
+  def Utilities.decrpt_pass(environment)
     yaml_usr_load = YAML.load_file('./tc.yml')
     cipher = OpenSSL::Cipher::Cipher.new("aes-256-cbc")
     cipher.decrypt
-    cipher.key = yaml_usr_load["key"]
+    cipher.key = yaml_usr_load[environment]["key"]
 
-    encrypted = [yaml_usr_load["encrypted"]].pack "H*"
+    encrypted = [yaml_usr_load[environment]["encrypted"]].pack "H*"
     decrypted = cipher.update(encrypted)
     decrypted << cipher.final
   end
 
-  def Utilities.http_get_request(url)  
+  def Utilities.http_get_request(url, environment)  
     request = Typhoeus::Request.new(url,
           method:  :get,
-          userpwd: "svc_teamcityapi:#{decrpt_pass()}",
+          userpwd: "svc_teamcityapi:#{decrpt_pass(environment)}",
           headers: { 'ContentType' => "application/json", 'Accept' => 'application/json'}
           )
   end
 
-  def Utilities.http_post_request(url, my_body, my_headers)
+  def Utilities.http_post_request(url, my_body, my_headers, environment)
     request = Typhoeus::Request.new(url,
           method:  :post,
-          userpwd: "svc_teamcityapi:#{decrpt_pass()}",
+          userpwd: "svc_teamcityapi:#{decrpt_pass(environment)}",
           headers: my_headers,
           body:    my_body,
           )
   end
 
-  def Utilities.run_request_parse_json(url)
-    response = self.http_get_request(url).run
+  def Utilities.run_request_parse_json(url, environment)
+    response = self.http_get_request(url, environment).run
     Crack::JSON.parse(response.body)
   end
 

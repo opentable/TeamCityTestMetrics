@@ -3,14 +3,15 @@ class TCProjects
   require 'time'
   require './utilities'
  
-  attr_reader :tc_host, :project_name, :project_test 
+  attr_reader :tc_host, :project_name, :project_test, :environment
 
-  def initialize(tc_host, project_name, project_test)
+  def initialize(tc_host, project_name, project_test, environment)
     @tc_host = tc_host
     @project_name = project_name
     @project_test = project_test
+    @environment = environment
     ## e.g. http://teamcity.otenv.com/httpAuth/app/rest/projects/id:ConsumerCucumberTeamInfra
-    @tc_project_data = Utilities.run_request_parse_json("#{tc_host}/httpAuth/app/rest/projects/id:#{project_name}")
+    @tc_project_data = Utilities.run_request_parse_json("#{tc_host}/httpAuth/app/rest/projects/id:#{project_name}", @environment)
     @tc_all_builds = self.tc_all_builds
     @tc_last_test_run = self.tc_single_build(@tc_all_builds['build'].first['href'])
   end
@@ -24,12 +25,12 @@ class TCProjects
     ## Return all the builds for this test suite
     ## e.g. http://teamcity.otenv.com/app/rest/buildTypes/id:bt2274/builds/
     buildHref = @tc_project_data['buildTypes']['buildType'].find {|buildType| buildType['name'] == project_test}['href']
-    Utilities.run_request_parse_json("#{@tc_host}#{buildHref}/builds") 
+    Utilities.run_request_parse_json("#{@tc_host}#{buildHref}/builds", @environment) 
   end
   
   def tc_single_build(hrefurl)
     ## Return all the info for a single build
-    Utilities.run_request_parse_json("#{@tc_host}#{hrefurl}")
+    Utilities.run_request_parse_json("#{@tc_host}#{hrefurl}", @environment)
   end
   
   def get_tc_project_buildtype_id

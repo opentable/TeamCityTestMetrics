@@ -14,7 +14,7 @@
      teams = value['Team']
 
      #TeamCity project object for a test suite
-     project = TCProjects.new( value['TeamCityHost'], value['Project'], value['Test'] )
+     project = TCProjects.new( value['TeamCityHost'], value['Project'], value['Test'], environment )
      team_city_project_name = project.get_tc_project_name
 
      #Get the test execution status of the latest run
