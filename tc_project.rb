@@ -12,8 +12,8 @@ class TCProjects
     @environment = environment
     ## e.g. http://teamcity.otenv.com/httpAuth/app/rest/projects/id:ConsumerCucumberTeamInfra
     @tc_project_data = Utilities.run_request_parse_json("#{tc_host}/httpAuth/app/rest/projects/id:#{project_name}", @environment)
-    @tc_all_builds = self.tc_all_builds
-    @tc_last_test_run = self.tc_single_build(@tc_all_builds['build'].first['href'])
+    @tc_all_builds = self.get_tc_all_builds
+    @tc_last_test_run = self.get_tc_single_build(@tc_all_builds['build'].first['href'])
   end
   
   def get_tc_project_name
@@ -21,14 +21,14 @@ class TCProjects
     @tc_project_data['name']
   end
   
-  def tc_all_builds
+  def get_tc_all_builds
     ## Return all the builds for this test suite
     ## e.g. http://teamcity.otenv.com/app/rest/buildTypes/id:bt2274/builds/
     buildHref = @tc_project_data['buildTypes']['buildType'].find {|buildType| buildType['name'] == project_test}['href']
     Utilities.run_request_parse_json("#{@tc_host}#{buildHref}/builds", @environment) 
   end
   
-  def tc_single_build(hrefurl)
+  def get_tc_single_build(hrefurl)
     ## Return all the info for a single build
     Utilities.run_request_parse_json("#{@tc_host}#{hrefurl}", @environment)
   end
@@ -58,13 +58,13 @@ class TCProjects
   def get_last_success_run
     if !(@tc_all_builds['build'].find {|build| build['status'] == "SUCCESS"}.nil?)
       successHref = @tc_all_builds['build'].find {|build| build['status'] == "SUCCESS"}['href']
-      first_success_build = self.tc_single_build(successHref)
-      time_lapse = Utilities.get_run_time_lapse(first_success_build['finishDate'], DateTime.now.to_s)
+      @tc_first_success_build = self.get_tc_single_build(successHref)
+      time_lapse = Utilities.get_run_time_lapse(@tc_first_success_build['finishDate'], DateTime.now.to_s)
       "Last Success: #{time_lapse}"
     else
-      last_known_fail_build = self.tc_single_build(@tc_all_builds['build'].last['href'])
+      @tc_last_known_fail_build = self.get_tc_single_build(@tc_all_builds['build'].last['href'])
       ##Calculate the lapse time since the test last executed
-      time_lapse = Utilities.get_run_time_lapse(last_known_fail_build['finishDate'], DateTime.now.to_s)
+      time_lapse = Utilities.get_run_time_lapse(@tc_last_known_fail_build['finishDate'], DateTime.now.to_s)
       "Last Success: > #{time_lapse}"
     end
   end
