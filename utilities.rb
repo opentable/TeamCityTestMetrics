@@ -5,7 +5,7 @@ module Utilities
   require 'digest/sha1'
   require 'yaml'
  
-  def Utilities.decrpt_pass(environment)
+  def self.decrpt_pass(environment)
     yaml_usr_load = YAML.load_file('./tc.yml')
     cipher = OpenSSL::Cipher::Cipher.new("aes-256-cbc")
     cipher.decrypt
@@ -16,7 +16,7 @@ module Utilities
     decrypted << cipher.final
   end
 
-  def Utilities.http_get_request(url, environment)  
+  def self.http_get_request(url, environment)  
     request = Typhoeus::Request.new(url,
           method:  :get,
           userpwd: "svc_teamcityapi:#{decrpt_pass(environment)}",
@@ -24,7 +24,7 @@ module Utilities
           )
   end
 
-  def Utilities.http_post_request(url, my_body, my_headers, environment)
+  def self.http_post_request(url, my_body, my_headers, environment)
     request = Typhoeus::Request.new(url,
           method:  :post,
           userpwd: "svc_teamcityapi:#{decrpt_pass(environment)}",
@@ -33,12 +33,12 @@ module Utilities
           )
   end
 
-  def Utilities.run_request_parse_json(url, environment)
+  def self.run_request_parse_json(url, environment)
     response = self.http_get_request(url, environment).run
     Crack::JSON.parse(response.body)
   end
 
-  def Utilities.get_run_time_lapse(start_time, end_time)
+  def self.get_run_time_lapse(start_time, end_time)
     time_lapse_secs = DateTime.parse(end_time).strftime('%s').to_f - DateTime.parse(start_time).strftime('%s').to_f
     mm, ss = time_lapse_secs.divmod(60)
     hh, mm = mm.divmod(60)
@@ -53,15 +53,4 @@ module Utilities
     time_lapse
   end
 
-  def Utilities.create_json_obj(sensu_name, environment, teams, test_status, project_name, test_name, last_run, test_failed, green_since)
-    json = {}
-    (test_status == "FAILURE") ? status = 1 : status = 0
-    output = "Status: #{test_status}, ProjectName: #{project_name}, Test Name: #{test_name}, Test Failed: #{test_failed}, Last Run: #{last_run}, Green_Since: #{green_since}"
-    json["name"] = sensu_name
-    json["environment"] = environment
-    json["team"] = teams
-    json["status"] = status 
-    json["output"] = output
-    json
-  end
 end
