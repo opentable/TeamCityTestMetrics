@@ -1,6 +1,4 @@
 class TCProjects
-  require 'date'
-  require 'time'
   require './utilities'
  
   attr_reader :tc_host, :project_name, :project_test, :environment

@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
   require 'json'
   require 'yaml'
   require './utilities'
@@ -11,8 +10,7 @@
 
     #TeamCity project object for a test suite
     project = TCProjects.new(value['TeamCityHost'], value['Project'], value['Test'], value['Environment'])
-    last_run = 
-    
+  
     sensu_obj = {
       'name'        => key,
       'environment' => value['Environment'],
