@@ -20,7 +20,7 @@ module Utilities
     request = Typhoeus::Request.new(url,
           :method  => :get,
           :userpwd => "svc_teamcityapi:#{decrpt_pass(environment)}",
-          :headers => { :ContentType => "application/json", :Accept => "application/json"}
+          :headers => { :ContentType => "application/json", :Accept => "application/json" }
           )
   end
 
@@ -39,7 +39,7 @@ module Utilities
   end
 
   def self.get_lapse_time(start_time, end_time)
-    time_lapse_secs = DateTime.parse(end_time).strftime('%s').to_f - DateTime.parse(start_time).strftime('%s').to_f
+    time_lapse_secs = DateTime.parse(end_time).strftime("%s").to_f - DateTime.parse(start_time).strftime("%s").to_f
     mm, ss = time_lapse_secs.divmod(60)
     hh, mm = mm.divmod(60)
     dd, hh = hh.divmod(24)
