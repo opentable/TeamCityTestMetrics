@@ -1,5 +1,5 @@
 class TCProjects
-  require './utilities'
+  require "./utilities"
  
   attr_reader :tc_host, :project_name, :project_test, :environment
 
@@ -45,7 +45,7 @@ class TCProjects
   end
    
   def get_test_failed
-    (@tc_last_test_run['testOccurrences']['failed'].nil?) ? 0 : @tc_last_test_run['testOccurrences']['failed']
+    @tc_last_test_run['testOccurrences']['failed'].nil? ? 0 : @tc_last_test_run['testOccurrences']['failed']
   end
   
   def get_total_tests
