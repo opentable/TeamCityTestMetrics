@@ -1,7 +1,5 @@
 class TCProjects
-  require 'date'
-  require 'time'
-  require './utilities'
+  require "./utilities"
  
   attr_reader :tc_host, :project_name, :project_test, :environment
 
@@ -47,25 +45,23 @@ class TCProjects
   end
    
   def get_test_failed
-    (@tc_last_test_run['testOccurrences']['failed'].nil?) ? num_failed_tests = 0 : num_failed_tests = @tc_last_test_run['testOccurrences']['failed']
-    "#{num_failed_tests}/#{@tc_last_test_run['testOccurrences']['count']}"
+    @tc_last_test_run['testOccurrences']['failed'].nil? ? 0 : @tc_last_test_run['testOccurrences']['failed']
+  end
+  
+  def get_total_tests
+    @tc_last_test_run['testOccurrences']['count']
   end
    
   def get_last_run
-    Utilities.get_run_time_lapse(@tc_last_test_run['finishDate'], DateTime.now.to_s)
+    @tc_last_test_run['finishDate']
   end
   
   def get_last_success_run
     if !(@tc_all_builds['build'].find {|build| build['status'] == "SUCCESS"}.nil?)
       successHref = @tc_all_builds['build'].find {|build| build['status'] == "SUCCESS"}['href']
-      @tc_first_success_build = self.get_tc_single_build(successHref)
-      time_lapse = Utilities.get_run_time_lapse(@tc_first_success_build['finishDate'], DateTime.now.to_s)
-      "Last Success: #{time_lapse}"
+      @tc_first_success_build = self.get_tc_single_build(successHref)['finishDate']
     else
-      @tc_last_known_fail_build = self.get_tc_single_build(@tc_all_builds['build'].last['href'])
-      ##Calculate the lapse time since the test last executed
-      time_lapse = Utilities.get_run_time_lapse(@tc_last_known_fail_build['finishDate'], DateTime.now.to_s)
-      "Last Success: > #{time_lapse}"
+      self.get_tc_single_build(@tc_all_builds['build'].last['href'])['finishDate']
     end
   end
 end
