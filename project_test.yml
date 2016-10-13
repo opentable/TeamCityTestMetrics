@@ -1,0 +1,73 @@
+--- 
+preprod: 
+  Attribution_PP_EU: 
+    Project: ConsumerCucumberTeamInfra
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "Attribution EU PreProd - Team Infra"
+  Attribution_PP_NA: 
+    Project: ConsumerCucumberTeamInfra
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "Attribution NA PreProd - Team Infra"
+  Reservation_PP_ASIA: 
+    Project: PreProdCucumberTestsConsumer
+    Team: consumer_platform
+    TeamCityHost: teamcity
+    Test: "Reservation - Asia"
+  Reservation_PP_EU: 
+    Project: PreProdCucumberTestsConsumer
+    Team: consumer_platform
+    TeamCityHost: teamcity
+    Test: "Reservation - EU"
+  Reservation_PP_NA: 
+    Project: PreProdCucumberTestsConsumer
+    Team: consumer_platform
+    TeamCityHost: teamcity
+    Test: "Reservation - NA"
+production: 
+  Attribution_PROD_EU: 
+    Project: ConsumerCucumberAutomation_ProductionTests
+    Team: consumer_platform
+    TeamCityHost: teamcity.otsql.opentable.com
+    Test: "Attribution - EU"
+  Attribution_PROD_NA: 
+    Project: ConsumerCucumberAutomation_ProductionTests
+    Team: consumer_platform
+    TeamCityHost: teamcity.otsql.opentable.com
+    Test: "Attribution - NA"
+  Reservation_PROD_AU: 
+    Project: ConsumerCucumberAutomation_ProductionTests
+    Team: booking_flow
+    TeamCityHost: teamcity.otsql.opentable.com
+    Test: "Prod Tests - AU"
+  Reservation_PROD_COM: 
+    Project: ConsumerCucumberAutomation_ProductionTests
+    Team: booking_flow
+    TeamCityHost: teamcity.otsql.opentable.com
+    Test: "Prod Tests - COM"
+  Reservation_PROD_DE: 
+    Project: ConsumerCucumberAutomation_ProductionTests
+    Team: booking_flow
+    TeamCityHost: teamcity.otsql.opentable.com
+    Test: "Prod Tests - DE"
+  Reservation_PROD_IE: 
+    Project: ConsumerCucumberAutomation_ProductionTests
+    Team: booking_flow
+    TeamCityHost: teamcity.otsql.opentable.com
+    Test: "Prod Tests - IE"
+  Reservation_PROD_JP: 
+    Project: ConsumerCucumberAutomation_ProductionTests
+    Team: booking_flow
+    TeamCityHost: teamcity.otsql.opentable.com
+    Test: "Prod Tests - JP"
+  Reservation_PROD_MX: 
+    Project: ConsumerCucumberAutomation_ProductionTests
+    Team: booking_flow
+    TeamCityHost: teamcity.otsql.opentable.com
+    Test: "Prod Tests - MX"
+  Reservation_PROD_UK: 
+    Project: ConsumerCucumberAutomation_ProductionTests
+    Team: booking_flow
+    TeamCityHost: teamcity.otsql.opentable.com
+    Test: "Prod Tests - UK"

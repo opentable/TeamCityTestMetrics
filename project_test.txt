@@ -1,5 +1,0 @@
-ConsumerCucumberTeamInfra:Attribution EU PreProd - Team Infra
-ConsumerCucumberTeamInfra:Attribution NA PreProd - Team Infra
-PreProdCucumberTestsConsumer:Reservation - Asia
-PreProdCucumberTestsConsumer:Reservation - EU
-PreProdCucumberTestsConsumer:Reservation - NA
