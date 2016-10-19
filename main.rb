@@ -14,7 +14,7 @@
     last_run = Utilities.get_lapse_time(proj.get_last_run, DateTime.now.to_s)
     last_green = Utilities.get_lapse_time(proj.get_last_success_run, DateTime.now.to_s)
     sensu_obj = {
-      :name        => k,
+      :name        => "CW_Auto_Metrics_#{k}",
       :environment => env,
       :team        => v['Team'],
       :status      => (proj.get_status == "FAILURE") ? 1 : 0,
