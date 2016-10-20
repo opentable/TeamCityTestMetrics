@@ -17,7 +17,7 @@
       :name        => "CW_Auto_Metrics_#{k}",
       :environment => env,
       :team        => v['Team'],
-      :status      => (proj.get_status == "FAILURE") ? 1 : 0,
+      :status      => (proj.get_status == "FAILURE") ? 2 : 0,
       :output      => "Status: #{proj.get_status}\\n" \
                       "ProjectName: #{proj.get_tc_project_name}\\n" \
                       "TestName: #{proj.get_test_name}\\n" \
