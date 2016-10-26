@@ -36,38 +36,23 @@ production:
     Team: consumer_platform
     TeamCityHost: teamcity.otsql.opentable.com
     Test: "Attribution - NA"
-  Reservation_PROD_AU: 
+  ReservationAPI_PROD: 
     Project: ConsumerCucumberAutomation_ProductionTests
     Team: consumer_platform
     TeamCityHost: teamcity.otsql.opentable.com
-    Test: "Prod Tests - AU"
-  Reservation_PROD_COM: 
+    Test: "ReservationAPI"
+  RestProfileReservation_PROD: 
     Project: ConsumerCucumberAutomation_ProductionTests
     Team: consumer_platform
     TeamCityHost: teamcity.otsql.opentable.com
-    Test: "Prod Tests - COM"
-  Reservation_PROD_DE: 
+    Test: "RestaurantProfile"
+  RestrefReservation_PROD: 
     Project: ConsumerCucumberAutomation_ProductionTests
     Team: consumer_platform
     TeamCityHost: teamcity.otsql.opentable.com
-    Test: "Prod Tests - DE"
-  Reservation_PROD_IE: 
+    Test: "Restref"
+  StartPageSite_PROD: 
     Project: ConsumerCucumberAutomation_ProductionTests
     Team: consumer_platform
     TeamCityHost: teamcity.otsql.opentable.com
-    Test: "Prod Tests - IE"
-  Reservation_PROD_JP: 
-    Project: ConsumerCucumberAutomation_ProductionTests
-    Team: consumer_platform
-    TeamCityHost: teamcity.otsql.opentable.com
-    Test: "Prod Tests - JP"
-  Reservation_PROD_MX: 
-    Project: ConsumerCucumberAutomation_ProductionTests
-    Team: consumer_platform
-    TeamCityHost: teamcity.otsql.opentable.com
-    Test: "Prod Tests - MX"
-  Reservation_PROD_UK: 
-    Project: ConsumerCucumberAutomation_ProductionTests
-    Team: consumer_platform
-    TeamCityHost: teamcity.otsql.opentable.com
-    Test: "Prod Tests - UK"
+    Test: "Start Page Site"
