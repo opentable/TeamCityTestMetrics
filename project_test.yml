@@ -2,32 +2,32 @@
 preprod:
   RestProfileReservation_PREPROD_NA: 
     Project: ConsumerPlatform_Automation_PreProdTests_RestaurantProfile
-    Team: consumer_platform
+    Team: booking_flow
     TeamCityHost: teamcity.otenv.com
     Test: "NA"
   RestProfileReservation_PREPROD_EU: 
     Project: ConsumerPlatform_Automation_PreProdTests_RestaurantProfile
-    Team: consumer_platform
+    Team: booking_flow
     TeamCityHost: teamcity.otenv.com
     Test: "EU"
   RestProfileReservation_PREPROD_AP: 
     Project: ConsumerPlatform_Automation_PreProdTests_RestaurantProfile
-    Team: consumer_platform
+    Team: booking_flow
     TeamCityHost: teamcity.otenv.com
     Test: "AP"    
   RestrefReservation_PREPROD_NA: 
     Project: ConsumerPlatform_Automation_PreProdTests_RestRef
-    Team: consumer_platform
+    Team: general
     TeamCityHost: teamcity.otenv.com
     Test: "NA"
   RestrefReservation_PREPROD_EU: 
     Project: ConsumerPlatform_Automation_PreProdTests_RestRef
-    Team: consumer_platform
+    Team: general
     TeamCityHost: teamcity.otenv.com
     Test: "EU"
   RestrefReservation_PREPROD_AP: 
     Project: ConsumerPlatform_Automation_PreProdTests_RestRef
-    Team: consumer_platform
+    Team: general
     TeamCityHost: teamcity.otenv.com
     Test: "AP"    
 production:
@@ -36,33 +36,43 @@ production:
     Team: consumer_platform
     TeamCityHost: teamcity.otenv.com
     Test: "ReservationsAPI"
+  Attribution_PROD_NA:
+    Project: ConsumerPlatform_Automation_ProductionTests_Attribution
+    Team: general
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  Attribution_PROD_EU:
+    Project: ConsumerPlatform_Automation_ProductionTests_Attribution
+    Team: general
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
   RestProfileReservation_PROD_NA: 
     Project: ConsumerPlatform_Automation_ProductionTests_RestaurantProfile
-    Team: consumer_platform
+    Team: booking_flow
     TeamCityHost: teamcity.otenv.com
     Test: "NA"
   RestProfileReservation_PROD_EU: 
     Project: ConsumerPlatform_Automation_ProductionTests_RestaurantProfile
-    Team: consumer_platform
+    Team: booking_flow
     TeamCityHost: teamcity.otenv.com
     Test: "EU"
   RestProfileReservation_PROD_AP: 
     Project: ConsumerPlatform_Automation_ProductionTests_RestaurantProfile
-    Team: consumer_platform
+    Team: booking_flow
     TeamCityHost: teamcity.otenv.com
     Test: "AP"    
   RestrefReservation_PROD_NA: 
     Project: ConsumerPlatform_Automation_ProductionTests_RestRef
-    Team: consumer_platform
+    Team: general
     TeamCityHost: teamcity.otenv.com
     Test: "NA"
   RestrefReservation_PROD_EU: 
     Project: ConsumerPlatform_Automation_ProductionTests_RestRef
-    Team: consumer_platform
+    Team: general
     TeamCityHost: teamcity.otenv.com
     Test: "EU"
   RestrefReservation_PROD_AP: 
     Project: ConsumerPlatform_Automation_ProductionTests_RestRef
-    Team: consumer_platform
+    Team: general
     TeamCityHost: teamcity.otenv.com
     Test: "AP"
