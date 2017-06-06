@@ -1,15 +1,5 @@
 --- 
-preprod: 
-  Attribution_PP_EU: 
-    Project: ConsumerCucumberTeamInfra
-    Team: consumer_platform
-    TeamCityHost: teamcity.otenv.com
-    Test: "Attribution EU PreProd - Team Infra"
-  Attribution_PP_NA: 
-    Project: ConsumerCucumberTeamInfra
-    Team: consumer_platform
-    TeamCityHost: teamcity.otenv.com
-    Test: "Attribution NA PreProd - Team Infra"
+preprod:
   RestProfileReservation_PREPROD_NA: 
     Project: ConsumerPlatform_Automation_PreProdTests_RestaurantProfile
     Team: consumer_platform
@@ -40,17 +30,7 @@ preprod:
     Team: consumer_platform
     TeamCityHost: teamcity.otenv.com
     Test: "AP"    
-production: 
-  Attribution_PROD_EU: 
-    Project: ConsumerPlatform_Automation_ProductionTests_Attribution
-    Team: consumer_platform
-    TeamCityHost: teamcity.otenv.com
-    Test: "EU"
-  Attribution_PROD_NA: 
-    Project: ConsumerPlatform_Automation_ProductionTests_Attribution
-    Team: consumer_platform
-    TeamCityHost: teamcity.otsql.opentable.com
-    Test: "NA"
+production:
   ReservationAPI_PROD: 
     Project: ConsumerPlatform_Automation_ProductionTests_ReservationApi
     Team: consumer_platform
@@ -85,9 +65,4 @@ production:
     Project: ConsumerPlatform_Automation_ProductionTests_RestRef
     Team: consumer_platform
     TeamCityHost: teamcity.otenv.com
-    Test: "AP"    
-  StartPageSite_PROD: 
-    Project: ConsumerCucumberAutomation_ProductionTests
-    Team: consumer_platform
-    TeamCityHost: teamcity.otsql.opentable.com
-    Test: "Start Page Site"
+    Test: "AP"

@@ -18,6 +18,11 @@ class TCProjects
     ##Return Team City Project Name
     @tc_project_data['name']
   end
+
+  def get_tc_link
+    ##Return link to Team City Project
+    @tc_project_data['webUrl']
+  end
   
   def get_tc_all_builds
     ## Return all the builds for this test suite
@@ -45,11 +50,19 @@ class TCProjects
   end
    
   def get_test_failed
-    @tc_last_test_run['testOccurrences']['failed'].nil? ? 0 : @tc_last_test_run['testOccurrences']['failed']
+    if @tc_last_test_run['statusText'].include? "Exit code"
+      return "Exit code 1"
+    else
+     @tc_last_test_run['testOccurrences']['failed'].nil? ? 0 : @tc_last_test_run['testOccurrences']['failed']
+    end
   end
   
   def get_total_tests
-    @tc_last_test_run['testOccurrences']['count']
+    if @tc_last_test_run['statusText'].include? "Exit code"
+      return "Exit code 1"
+    else
+      @tc_last_test_run['testOccurrences']['count']
+    end
   end
    
   def get_last_run
