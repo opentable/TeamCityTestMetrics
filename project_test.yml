@@ -15,16 +15,31 @@ preprod:
     Team: consumer_platform
     TeamCityHost: teamcity.otenv.com
     Test: "NA"
-  Reservation_PP_EU: 
-    Project: PreProdCucumberTestsConsumer
+  RestProfileReservation_PREPROD_EU: 
+    Project: ConsumerPlatform_Automation_PreProdTests_RestaurantProfile
     Team: consumer_platform
-    TeamCityHost: teamcity
-    Test: "Reservation - EU"
-  Reservation_PP_NA: 
-    Project: PreProdCucumberTestsConsumer
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  RestProfileReservation_PREPROD_AP: 
+    Project: ConsumerPlatform_Automation_PreProdTests_RestaurantProfile
     Team: consumer_platform
-    TeamCityHost: teamcity
-    Test: "Reservation - NA"
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP"    
+  RestrefReservation_PREPROD_NA: 
+    Project: ConsumerPlatform_Automation_PreProdTests_RestRef
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  RestrefReservation_PREPROD_EU: 
+    Project: ConsumerPlatform_Automation_PreProdTests_RestRef
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  RestrefReservation_PREPROD_AP: 
+    Project: ConsumerPlatform_Automation_PreProdTests_RestRef
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP"    
 production: 
   Attribution_PROD_EU: 
     Project: ConsumerPlatform_Automation_ProductionTests_Attribution
