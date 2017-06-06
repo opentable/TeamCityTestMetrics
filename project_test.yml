@@ -27,30 +27,50 @@ preprod:
     Test: "Reservation - NA"
 production: 
   Attribution_PROD_EU: 
-    Project: ConsumerCucumberAutomation_ProductionTests
+    Project: ConsumerPlatform_Automation_ProductionTests_Attribution
     Team: consumer_platform
-    TeamCityHost: teamcity.otsql.opentable.com
-    Test: "Attribution - EU"
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
   Attribution_PROD_NA: 
-    Project: ConsumerCucumberAutomation_ProductionTests
+    Project: ConsumerPlatform_Automation_ProductionTests_Attribution
     Team: consumer_platform
     TeamCityHost: teamcity.otsql.opentable.com
-    Test: "Attribution - NA"
+    Test: "NA"
   ReservationAPI_PROD: 
-    Project: ConsumerCucumberAutomation_ProductionTests
+    Project: ConsumerPlatform_Automation_ProductionTests_ReservationApi
     Team: consumer_platform
-    TeamCityHost: teamcity.otsql.opentable.com
-    Test: "ReservationAPI"
+    TeamCityHost: teamcity.otenv.com
+    Test: "ReservationsAPI"
   RestProfileReservation_PROD: 
-    Project: ConsumerCucumberAutomation_ProductionTests
+    Project: ConsumerPlatform_Automation_ProductionTests_RestaurantProfile
     Team: consumer_platform
-    TeamCityHost: teamcity.otsql.opentable.com
-    Test: "RestaurantProfile"
-  RestrefReservation_PROD: 
-    Project: ConsumerCucumberAutomation_ProductionTests
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  RestProfileReservation_PROD: 
+    Project: ConsumerPlatform_Automation_ProductionTests_RestaurantProfile
     Team: consumer_platform
-    TeamCityHost: teamcity.otsql.opentable.com
-    Test: "Restref"
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  RestProfileReservation_PROD: 
+    Project: ConsumerPlatform_Automation_ProductionTests_RestaurantProfile
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP"    
+  RestrefReservation_PROD_NA: 
+    Project: ConsumerPlatform_Automation_ProductionTests_RestRef
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  RestrefReservation_PROD_EU: 
+    Project: ConsumerPlatform_Automation_ProductionTests_RestRef
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  RestrefReservation_PROD_AP: 
+    Project: ConsumerPlatform_Automation_ProductionTests_RestRef
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP"    
   StartPageSite_PROD: 
     Project: ConsumerCucumberAutomation_ProductionTests
     Team: consumer_platform
