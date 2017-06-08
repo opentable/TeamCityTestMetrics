@@ -27,7 +27,7 @@
                       "LastRunTimestamp: #{proj.get_last_run}\\n" \
                       "GreenSince: #{last_green}\\n" \
                       "GreenSinceTimestamp: #{proj.get_last_success_run}\\n" \
-                      "TeamCityLink: '#{proj.get_tc_link}'"
+                      "TeamCityLink: ['#{proj.get_tc_link}']"
     }
     puts JSON.generate(sensu_obj)
   }
