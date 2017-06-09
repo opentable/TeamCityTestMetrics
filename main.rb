@@ -18,16 +18,17 @@
       :environment => env,
       :team        => v['Team'],
       :status      => (proj.get_status == "FAILURE") ? 2 : 0,
-      :runbook     => "#{proj.get_tc_link}",
+      # :runbook     => "#{proj.get_tc_link}",
       :output      => "Status: #{proj.get_status}\\n" \
                       "ProjectName: #{proj.get_tc_project_name}\\n" \
                       "TestName: #{proj.get_test_name}\\n" \
-                      "TestFailed: #{proj.get_test_failed}\\n" \
-                      "TotalTests: #{proj.get_total_tests}\\n" \
-                      "LastRun: #{last_run}\\n" \
-                      "LastRunTimestamp: #{proj.get_last_run}\\n" \
-                      "GreenSince: #{last_green}\\n" \
-                      "GreenSinceTimestamp: #{proj.get_last_success_run}"
+                      "TeamCityLink: \'#{proj.get_tc_link}\'"
+                      # "TestFailed: #{proj.get_test_failed}\\n" \
+                      # "TotalTests: #{proj.get_total_tests}\\n" \
+                      # "LastRun: #{last_run}\\n" \
+                      # "LastRunTimestamp: #{proj.get_last_run}\\n" \
+                      # "GreenSince: #{last_green}\\n" \
+                      # "GreenSinceTimestamp: #{proj.get_last_success_run}"
     }
     puts JSON.generate(sensu_obj)
   }
