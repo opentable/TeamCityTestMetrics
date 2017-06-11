@@ -19,10 +19,11 @@
       :team        => v['Team'],
       :status      => (proj.get_status == "FAILURE") ? 2 : 0,
       # :runbook     => "#{proj.get_tc_link}",
-      :output      => "Status: #{proj.get_status}\\n" \
-                      "ProjectName: #{proj.get_tc_project_name}\\n" \
-                      "TestName: #{proj.get_test_name}\\n" \
-                      "TeamCityLink: \'#{proj.get_tc_link}\'"
+      :output      => "TeamCityLink:%20#{proj.get_tc_link}%0A" \
+                      "Status:%20#{proj.get_status}%0A" \
+                      # "Status: #{proj.get_status}\\n" \
+                      # "ProjectName: #{proj.get_tc_project_name}\\n" \
+                      # "TestName: #{proj.get_test_name}\\n" \
                       # "TestFailed: #{proj.get_test_failed}\\n" \
                       # "TotalTests: #{proj.get_total_tests}\\n" \
                       # "LastRun: #{last_run}\\n" \
