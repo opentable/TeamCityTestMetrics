@@ -1,5 +1,95 @@
 --- 
 preprod:
+  AvailabilityAPIERBs_PREPROD_NA: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_AvailabilityApiERBs
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  AvailabilityAPIERBs_PREPROD_EU: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_AvailabilityApiERBs
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  AvailabilityAPIERBs_PREPROD_AP: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_AvailabilityApiERBs
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP"
+  AvailbilityAPIGCConnect_PREPROD_NA: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_AvailbilityApiGcConnect
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  AvailbilityAPIGCConnect_PREPROD_EU: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_AvailbilityApiGcConnect
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  AvailbilityAPIGCConnect_PREPROD_AP: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_AvailbilityApiGcConnect
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP"
+  SlotLockAPIERBs_PREPROD_NA: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_SlotLockApiERBs
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  SlotLockAPIERBs_PREPROD_EU: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_SlotLockApiERBs
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  SlotLockAPIERBs_PREPROD_AP: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_SlotLockApiERBs
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP"
+  SlotLockAPIGCConnect_PREPROD_NA: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_SlotLockApiGcConnect
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  SlotLockAPIGCConnect_PREPROD_EU: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_SlotLockApiGcConnect
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  SlotLockAPIGCConnect_PREPROD_AP: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_SlotLockApiGcConnect
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP" 
+  ReservationAPIERBs_PREPROD_NA: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_ReservationApiERBs
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  ReservationAPIERBs_PREPROD_EU: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_ReservationApiERBs
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  ReservationAPIERBs_PREPROD_AP: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_ReservationApiERBs
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP"
+  ReservationAPIGCConnect_PREPROD_NA: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_ReservationApiNonErb
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  ReservationAPIGCConnect_PREPROD_EU: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_ReservationApiNonErb
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  ReservationAPIGCConnect_PREPROD_AP: 
+    Project: ConsumerPlatform_Automation_PreProdTests_ApiTests_ReservationApiNonErb
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP"
   RestProfileReservation_PREPROD_NA: 
     Project: ConsumerPlatform_Automation_PreProdTests_RestaurantProfile
     Team: consumer_platform
@@ -14,7 +104,22 @@ preprod:
     Project: ConsumerPlatform_Automation_PreProdTests_RestaurantProfile
     Team: consumer_platform
     TeamCityHost: teamcity.otenv.com
-    Test: "AP"    
+    Test: "AP"
+  RestProfileCCReservation_PREPROD_NA: 
+    Project: ConsumerPlatform_Automation_PreProdTests_RestRef_CreditCard
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  RestProfileCCReservation_PREPROD_EU: 
+    Project: ConsumerPlatform_Automation_PreProdTests_RestRef_CreditCard
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  RestProfileCCReservation_PREPROD_AP: 
+    Project: ConsumerPlatform_Automation_PreProdTests_RestRef_CreditCard
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP"
   RestrefReservation_PREPROD_NA: 
     Project: ConsumerPlatform_Automation_PreProdTests_RestRef
     Team: general
@@ -29,7 +134,27 @@ preprod:
     Project: ConsumerPlatform_Automation_PreProdTests_RestRef
     Team: general
     TeamCityHost: teamcity.otenv.com
-    Test: "AP"    
+    Test: "AP"
+  RestrefCCReservation_PREPROD_NA: 
+    Project: ConsumerPlatform_Automation_PreProdTests_RestRef_CreditCard
+    Team: general
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"
+  RestrefCCReservation_PREPROD_EU: 
+    Project: ConsumerPlatform_Automation_PreProdTests_RestRef_CreditCard
+    Team: general
+    TeamCityHost: teamcity.otenv.com
+    Test: "EU"
+  RestrefCCReservation_PREPROD_AP: 
+    Project: ConsumerPlatform_Automation_PreProdTests_RestRef_CreditCard
+    Team: general
+    TeamCityHost: teamcity.otenv.com
+    Test: "AP"
+  WaitList_PREPROD_NA: 
+    Project: ConsumerPlatform_Automation_PreProd_WaitList
+    Team: consumer_platform
+    TeamCityHost: teamcity.otenv.com
+    Test: "NA"    
 production:
   ReservationAPI_PROD: 
     Project: ConsumerPlatform_Automation_ProductionTests_ReservationApi
