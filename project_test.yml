@@ -171,21 +171,6 @@ production:
     Team: general
     TeamCityHost: teamcity.otenv.com
     Test: "EU"
-  RestProfileReservation_PROD_NA: 
-    Project: ConsumerPlatform_Automation_ProductionTests_RestaurantProfile
-    Team: consumer_platform
-    TeamCityHost: teamcity.otenv.com
-    Test: "NA"
-  RestProfileReservation_PROD_EU: 
-    Project: ConsumerPlatform_Automation_ProductionTests_RestaurantProfile
-    Team: consumer_platform
-    TeamCityHost: teamcity.otenv.com
-    Test: "EU"
-  RestProfileReservation_PROD_AP: 
-    Project: ConsumerPlatform_Automation_ProductionTests_RestaurantProfile
-    Team: consumer_platform
-    TeamCityHost: teamcity.otenv.com
-    Test: "AP"    
   RestrefReservation_PROD_NA: 
     Project: ConsumerPlatform_Automation_ProductionTests_RestRef
     Team: general
